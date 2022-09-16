@@ -9,7 +9,7 @@
   <xacro:include filename="$(find linorobot2_description)/urdf/sensors/stereo_camera.urdf.xacro" />
   <xacro:include filename="$(find linorobot2_description)/urdf/sensors/gps.urdf.xacro" />
   <xacro:include filename="$(find linorobot2_description)/urdf/controllers/skid_steer.urdf.xacro" />
-  <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro" />
+  <xacro:include filename="$(find linorobot2_description)/urdf/sensors/VLP-16.urdf.xacro" />
 
   <xacro:base 
     length="${base_length}" 
@@ -62,12 +62,10 @@
   <xacro:imu />
   <xacro:gps />
 
-  <!--
-  <xacro:VLP-16>
+  <xacro:VLP-16 parent="base_link" name="velodyne" topic="/velodyne_points" hz="10" samples="440" >
     <xacro:insert_block name="lidar_pose" />
   </xacro:VLP-16>
-  -->
-  
+
   <xacro:stereo_camera>
     <xacro:insert_block name="stereo_camera_pose" />
   </xacro:stereo_camera>

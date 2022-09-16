@@ -11,7 +11,7 @@ This repository is a fork of the [linorobot2](https://github.com/linorobot/linor
 3. Install dependencies by running `rosdep update && rosdep install --from-path src --ignore-src -y --skip-keys microxrcedds_agent --skip-keys micro_ros_agent` from within the root of your workspace.
 
 ## How to run
-1. After building the package and sourcing the workspace, run `ros2 launch linorobot2_gazebo minidrone_sim.launch.py` to launch the simulator
+1. After building the package (NOTE: using symlink-install may lead to unexpected behaviour) and sourcing the workspace, run `ros2 launch linorobot2_gazebo minidrone_sim.launch.py` to launch the simulator
 
 2. To drive the robot, run `ros2 run teleop_twist_keyboard teleop_twist_keyboard` in a separate terminal
 

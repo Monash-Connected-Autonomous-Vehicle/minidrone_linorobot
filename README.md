@@ -15,5 +15,7 @@ This repository is a fork of the [linorobot2](https://github.com/linorobot/linor
 
 2. To drive the robot, run `ros2 run teleop_twist_keyboard teleop_twist_keyboard` in a separate terminal
 
-## Other
-For more information on linorobot, see the LINOROBOT_README or view it on the linorobot2 repository
+## General use practices
+Minidrone features should not be pushed to this repository. Ideally, this package should exist in an isolated workspace that can be built and sourced independently from any packages that are intended to run in physical implementation, those of which should be pushed to the [MiniDrone Project repository](https://github.com/Monash-Connected-Autonomous-Vehicle/minidrone).
+
+For more information on linorobot, see the LINOROBOT_README or view it on the linorobot2 repository.

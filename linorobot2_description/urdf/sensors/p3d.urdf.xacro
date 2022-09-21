@@ -1,0 +1,14 @@
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:macro name="p3d">
+    <gazebo>
+      <plugin name="ground_truth" filename="libgazebo_ros_p3d.so">
+        <ros>
+            <remapping>odom:=true_odom</remapping>
+        </ros>
+        <frame_name>map</frame_name>
+        <body_name>base_footprint</body_name>
+        <update_rate>200.0</update_rate>
+      </plugin>
+    </gazebo>
+  </xacro:macro>
+</robot>

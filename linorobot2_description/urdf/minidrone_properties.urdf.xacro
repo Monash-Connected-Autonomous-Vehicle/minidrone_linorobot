@@ -18,7 +18,7 @@
   </xacro:property>
 
   <xacro:property name="stereo_camera_pose">
-    <origin xyz="0.55 0 0.16" rpy="0 0 0"/>
+    <origin xyz="0.4 0 0.45" rpy="0 0.5 0"/>
   </xacro:property>
 
   <xacro:property name="lidar_pose">

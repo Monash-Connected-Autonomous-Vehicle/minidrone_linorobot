@@ -28,12 +28,12 @@ def generate_launch_description():
         [FindPackageShare('linorobot2_bringup'), 'launch', 'joy_teleop.launch.py']
     )
 
-    ekf_config_path = PathJoinSubstitution(
-        [FindPackageShare("linorobot2_base"), "config", "ekf.yaml"]
-    )
+    # ekf_config_path = PathJoinSubstitution(
+    #     [FindPackageShare("linorobot2_base"), "config", "ekf.yaml"]
+    # )
 
     world_path = PathJoinSubstitution(
-        [FindPackageShare("linorobot2_gazebo"), "worlds", "map1.txt"]
+        [FindPackageShare("linorobot2_gazebo"), "worlds", "racetrack_day_empty.world"]
     )
 
     description_launch_path = PathJoinSubstitution(
@@ -66,17 +66,17 @@ def generate_launch_description():
             name='command_timeout'
         ),
 
-        Node(
-            package='robot_localization',
-            executable='ekf_node',
-            name='ekf_filter_node',
-            output='screen',
-            parameters=[
-                {'use_sim_time': use_sim_time}, 
-                ekf_config_path
-            ],
-            remappings=[("odometry/filtered", "odom")]
-        ),
+        # Node(
+        #     package='robot_localization',
+        #     executable='ekf_node',
+        #     name='ekf_filter_node',
+        #     output='screen',
+        #     parameters=[
+        #         {'use_sim_time': use_sim_time}, 
+        #         ekf_config_path
+        #     ],
+        #     remappings=[("odometry/filtered", "odom")]
+        # ),
 
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(description_launch_path),

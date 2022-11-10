@@ -9,7 +9,7 @@
   <xacro:include filename="$(find linorobot2_description)/urdf/sensors/stereo_camera.urdf.xacro" />
   <xacro:include filename="$(find linorobot2_description)/urdf/sensors/gps.urdf.xacro" />
   <xacro:include filename="$(find linorobot2_description)/urdf/sensors/p3d.urdf.xacro" />
-  <xacro:include filename="$(find linorobot2_description)/urdf/controllers/skid_steer.urdf.xacro" />
+  <xacro:include filename="$(find linorobot2_description)/urdf/controllers/ackermann_drive.urdf.xacro" />
   <xacro:include filename="$(find linorobot2_description)/urdf/sensors/VLP-16.urdf.xacro" />
 
   <xacro:base 
@@ -72,7 +72,7 @@
     <xacro:insert_block name="stereo_camera_pose" />
   </xacro:stereo_camera>
 
-  <xacro:diff_drive_controller
+  <xacro:ackermann_drive_controller
     wheel_separation="${wheel_pos_y * 2}"
     wheel_radius="${wheel_radius}"
     wheel_torque="${wheel_torque}"

@@ -15,12 +15,14 @@
 
         <wheel_separation>${wheel_separation}</wheel_separation>
         <wheel_diameter>${wheel_radius * 2}</wheel_diameter>
-        <max_wheel_acceleration>1.0</max_wheel_acceleration>
-        <max_steer>0.85</max_steer>
+
+        <max_speed>20.0</max_speed>
+        <max_steer>5.0</max_steer>
+        <max_steering_angle>0.85</max_steering_angle>
 
         <robot_base_frame>base_footprint</robot_base_frame>
         <publish_odom>true</publish_odom>
-        <publish_odom_tf>false</publish_odom_tf>
+        <publish_odom_tf>true</publish_odom_tf>
         <publish_wheel_tf>true</publish_wheel_tf>
         <odometry_frame>odom</odometry_frame>
       </plugin>

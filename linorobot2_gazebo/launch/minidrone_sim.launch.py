@@ -33,7 +33,7 @@ def generate_launch_description():
     # )
 
     world_path = PathJoinSubstitution(
-        [FindPackageShare("linorobot2_gazebo"), "worlds", "racetrack_day_empty.world"]
+        [FindPackageShare("linorobot2_gazebo"), "worlds", "map1.txt"]
     )
 
     description_launch_path = PathJoinSubstitution(

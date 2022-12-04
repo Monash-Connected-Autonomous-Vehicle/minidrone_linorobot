@@ -72,9 +72,11 @@
     <xacro:insert_block name="stereo_camera_pose" />
   </xacro:stereo_camera>
 
+  
   <xacro:ackermann_drive_controller
     wheel_separation="${wheel_pos_y * 2}"
     wheel_radius="${wheel_radius}"
     wheel_torque="${wheel_torque}"
   />
+  
 </robot>

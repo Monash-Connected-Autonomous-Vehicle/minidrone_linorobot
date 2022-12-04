@@ -2,7 +2,35 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
   <xacro:macro name="wheel" params="side radius width pos_x pos_y pos_z mass">
 
-    <link name="${side}_steering_link"/>
+    <link name="${side}_steering_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="0.001" length="0.001"/>
+        </geometry>
+        <material name="purple">
+            <color rgba="0.8509 0.1 0.8509 1.0"/>
+        </material>
+      </visual>
+
+      <!--
+      <collision>
+        <origin xyz="0 0 0" rpy="$0 0 0"/>
+        <geometry>
+          <cylinder radius="${radius}" length="${width}"/>
+        </geometry>
+      </collision>
+      -->
+
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.0001"/>
+        <inertia ixx="0.0001" ixy="0" ixz="0"
+                 iyy="0.0001" iyz="0"
+                 izz="0.0001" />
+      </inertial>
+    </link>
+
     <link name="${side}_wheel_link">
       <visual>
         <origin xyz="0 0 0" rpy="${pi/2} 0 0"/>
@@ -29,6 +57,9 @@
       </inertial>
     </link>
 
+    <gazebo reference="${side}_steering_link">
+    </gazebo>
+
     <gazebo reference="${side}_wheel_link">  
       <visual>  
         <material>
@@ -43,8 +74,8 @@
     <joint name="${side}_steering_joint" type="continuous">
       <axis xyz="0 0 1"/>
       <parent link="base_link"/>
-      <child link="${side}_wheel_steering_link"/>
-      <origin xyz="${x_pos} ${y_pos} ${z_pos}" rpy="0 0 0"/>
+      <child link="${side}_steering_link"/>
+      <origin xyz="${pos_x} ${pos_y} ${pos_z}" rpy="0 0 0"/>
     </joint>
 
     <joint name="${side}_wheel_joint" type="continuous">
@@ -53,5 +84,6 @@
       <child link="${side}_wheel_link"/>
       <origin xyz="0 0 0" rpy="0 0 0"/>
     </joint>
+
   </xacro:macro>
 </robot>

@@ -4,6 +4,7 @@
       <plugin name="ackermann_drive" filename="libgazebo_ros_ackermann_drive.so">
         <ros>
           <argument>odom:=odom/unfiltered</argument>
+          <!--<argument>tf:=dummy_tf</argument>-->
         </ros>
         <updateRate>100</updateRate>
         <front_left_joint>front_left_wheel_joint</front_left_joint>
